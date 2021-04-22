@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="shortcut icon" href="/home/ec2-user/venv/project/FourBoxes/static/img/noon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/map.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/button.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="../static/js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="navbar">
+				<a href="index4">NOONCHIGAME</a>
+				<a href="preview_seoul">과거 관람객</a>
+				<a href="predict_seoul">이번주 관람객</a>
+				<a href="map_seoul">서울대공원&주변</a>
+				<div class="dropdown">
+    				<button class="dropbtn" onclick="myFunction()">서울대공원 행사 
+      					<i class="fa fa-caret-down"></i>
+    				</button>
+    				<div class="dropdown-content" id="myDropdown">
+				      <a href="info_seoul_1">티켓 할인</a>
+				      <a href="notice_seoul">공지사항</a>
+				    </div>
+			    </div>
+				
+			</div>
+				<div class="panel"><img src="../static/img/land.jpg" alt="Image 1" style="opacity:0.1" width=100% height=120%/>
+				<header class="left" style="width:1000px; top:840px" >
+					
+					<!-- 티켓요금 / 개인 -->
+					
+						<div class="boardType1 mgb10">
+						<h1 style="font:32px; color:#FFB2B9;">서울랜드 이용료</h1>
+						<h3>■ 개인 요금</h3>
+							<table cellpadding="0" cellspacing="0" align="center">
+								<thead>
+									<tr>
+										<th colspan="2"style="width:400px">구분<hr></th>
+										<th align="left" style="width:150px">어른<hr></th>
+										<th align="left" style="width:150px">청소년<hr></th>
+										<th align="left" style="width:150px">어린이<hr></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="first">
+										<th rowspan="2">파크<br>이용권</th>
+										<th>주간권<br>(1일권)</th>
+										<td>46,000</td>
+										<td>43,000</td>
+										<td>40,000</td>
+									</tr>
+									<tr>
+										<th class="notFirst">야간권<br>(오후 4시~)</th>
+										<td>39,000</td>
+										<td>36,000</td>
+										<td>33,000</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+						<ul class="note">
+							<li>36개월 미만 무료 이용 가능(확인 가능한 서류 지참)<br>국가유공자 및 유족 –파크이용권 50% 할인(확인 가능한 서류 소지)<br>경로(만65세 이상)자는 어린이 요금이 적용되며, 신분증을 지참하셔야합니다.</li>
+							<!--li>2015.9.1 ~ 9.4까지 <strong style="color:blue">평일</strong> 야간 요금 적용시간을 오후 <strong style="color:red">3시</strong>로 변경합니다</li-->
+						</ul>
+					<div class="listType2 mgb30">
+				<div class="titSec">
+					<h3>■ 장애인 요금</h3>
+					<div class="Sec pdt10">
+						<ul class="infoType1">
+							<!--li>2015.9.1 ~ 9.4까지 <strong class="pt_6">평일</strong> 야간 요금 적용시간을 오후 <strong style="color:red">3시</strong>로 변경합니다</li-->
+							<li>장애인 및 보호자 1인까지 장애인 요금이 적용됩니다.</li>
+							<li>시설 이용 시 성인보호자(만18세 이상)와 동반 탑승해 주셔야 합니다.</li>
+							<li>문의안내 : 02-509-6000</li>
+						</ul>
+					</div>
+				</div>
+				<table cellspacing="0" cellpadding="0" align="center">
+					<colgroup>
+						<col width="105">
+						<col width="120">
+						<col width="89">
+						<col width="89">
+						<col width="100">
+						<col width="400">
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="2" scope="col">구분<hr></th>
+							<th scope="col" align="left">&nbsp;&nbsp;&nbsp;어른<hr></th>
+							<th scope="col" align="left">청소년<hr></th>
+							<th scope="col" align="left">어린이<hr></th>
+							<th class="last" scope="col">비고<hr></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="tcenter b1" rowspan="2" scope="row"><div class="inTxt">
+								파크이용권
+							</div></th>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								주간권<br>(1일권)
+							</div></th>
+							<td class="tcenter" scope="col"><div class="inTxt">
+								<strong>33,000</strong>원
+							</div></td>
+							<td class="tcenter" scope="col"><div class="inTxt">
+								<strong>31,000</strong>원
+							</div></td>
+							<td class="tcenter" scope="col"><div class="inTxt">
+								<strong>29,000</strong>원
+							</div></td>
+							<td class="tleft b1" rowspan="2" scope="col"><div class="inTxt">
+								입장+놀이시설 자유이용 <br>(체험시설/코인시설/계절시설/기획전시/공연등 제외)
+							</div></td>
+						</tr>
+						<tr class="last">
+							<th class="tcenter" scope="col"><div class="inTxt">
+								야간권<br>(오후 4시~)
+							</div></th>
+							<td class="tcenter" scope="col"><div class="inTxt">
+								<strong>28,000</strong>원
+							</div></td>
+							<td class="tcenter" scope="col"><div class="inTxt">
+								<strong>26,000</strong>원
+							</div></td>
+							<td class="tcenter" scope="col"><div class="inTxt">
+								<strong>23,000</strong>원
+							</div></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="listType2 mgb30">
+				<div class="titSec">
+					<h3>■ 체험시설 요금</h3>
+					<div class="Sec pdt10">
+						<ul class="infoType1">
+							<li>기존의 놀이시설에서 느낄 수 없었던 특별한 체험을 즐기세요.</li>
+							<li>체험시설은 파크이용권 구매 후 이용 가능합니다.</li>
+							<li>날씨 및 공원 사정에 의해 운휴할 수 있습니다. 양해를 부탁 드립니다.</li>
+						</ul>
+					</div>
+				</div>
+				<table cellspacing="0" cellpadding="0" class="mgb15" align="center">
+					<colgroup>
+						<col width="200">
+						<col width="160">
+						<col width="125">
+						<col width="143">
+						<col width="180">
+						<col width="110">
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="2" scope="col">구분<hr></th>
+							<th colspan="2" scope="col">요금<hr></th>
+							<th scope="col">연간이용손님<hr></th>
+							<th class="last" scope="col">비고<hr></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="tcenter" rowspan="3" scope="col"><div class="inTxt">
+								스카이엑스
+							</div></th>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								1인 탑승
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center"><div class="inTxt">
+								<strong>15,000</strong>원
+							</div></td>
+							<td class="tcenter" rowspan="3" scope="col" align="center"><div class="inTxt">
+								50%할인
+							</div></td>
+							<td class="tleft" rowspan="3" scope="col">	</td>
+						</tr>
+						<tr>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								2인 동시탑승
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center"><div class="inTxt">
+								<strong>20,000</strong>원
+							</div></td>
+							
+						</tr>
+						<tr>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								3인 동시탑승
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center"><div class="inTxt">
+								<strong>25,000</strong>원
+							</div></td>
+							
+						</tr>						<tr>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								워터워크
+							</div></th>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								1인
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center"><div class="inTxt">
+								<strong>5,000</strong>원
+							</div></td>
+							<td class="tcenter" scope="col" align="center"><div class="inTxt">
+								동일
+							</div></td>
+							<td class="tcenter" scope="col"><div class="inTxt">
+								동절기 운휴
+							</div></td>
+						</tr>
+
+						<tr>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								AR안전체험관
+							</div></th>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								1인
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center"><div class="inTxt">
+								<strong>5,000</strong>원
+							</div></td>
+							<td class="tcenter" scope="col" align="center"><div class="inTxt">
+								40% 할인
+							</div></td>
+							<td class="tleft" scope="col"><div class="inTxt">
+								
+							</div></td>
+						</tr>
+						<tr>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								VR게이트
+							</div></th>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								1인/1회
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center"><div class="inTxt">
+								<strong>4,000</strong>원
+							</div></td>
+							<td class="tcenter" scope="col" align="center"><div class="inTxt">
+								동일
+							</div></td>
+							<td class="tleft" scope="col"><div class="inTxt">
+								
+							</div></td>
+						</tr>
+						<tr>
+							<th class="tcenter" rowspan="2" scope="col"><div class="inTxt">
+								니나노 고카트
+							</div></th>
+							<th class="tcenter" scope="col"><div class="inTxt">
+								1인탑승
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center"><div class="inTxt">
+								<strong>5,000</strong>원
+							</div></td>
+							<td class="tcenter" rowspan="2" scope="col" align="center"><div class="inTxt">
+								동일
+							</div></td>
+							<td class="tleft" rowspan="2" scope="col"><div class="inTxt">
+								
+							</div></td>
+						</tr>
+						<tr>
+							
+							<th class="tcenter" scope="col"><div class="inTxt">
+								2인동시탑승
+							</div></th>
+							<td class="tcenter" colspan="2" scope="col" align="center">
+								<div class="inTxt"><strong>7,500</strong>원</div>
+							</td>
+							
+						</tr>
+					</tbody>
+				</table>
+				<table>
+				<colgroup>
+						<col width="500">
+						<col width="200">
+						<col width="800">
+					</colgroup>
+					<h3>■ 티켓 할인 정보</h3>
+					<thead>
+						<tr>
+							<th>티켓 종류<hr>
+							</th>
+							<th>금액<hr>
+							</th>
+							<th>소셜커머스<hr>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr style="border-bottom:1.8px solid white">
+							<th>주중,주말 종일권(9/1-9/29)
+							</th>
+							<th>27,900원
+							</th>
+							<th><br>
+								<a class="button" href="http://www.tmon.co.kr/deal/2376189878?keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&tl_area=SALDEAL&tl_ord=3&searchClick=DL%7CND%7CBM&thr=ts">&nbsp;&nbsp;티몬(-400원)&nbsp;&nbsp;</a>
+								<a class="button2" href="https://trip.coupang.com/tp/products/100000038029?q=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&itemsCount=36&searchId=72276ba8e0af427ebca4d270a56e9d16&rank=1">&nbsp;&nbsp;쿠팡&nbsp;&nbsp;</a>
+								<a class="button" href="http://www.wemakeprice.com/deal/adeal/4567374?search_keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&_no=1&_service=5">&nbsp;&nbsp;위메프&nbsp;&nbsp;</a>
+								<a class="button2" href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=2532704721&trTypeCd=21&trCtgrNo=585021&lCtgrNo=2878&mCtgrNo=1017900">&nbsp;&nbsp;11번가&nbsp;&nbsp;</a>
+								<a class="button" href="http://item.gmarket.co.kr/Item?goodscode=1661637914&pos_shop_cd=GE&pos_class_cd=300007053&pos_class_kind=S&selDateS=&selDateE=">&nbsp;&nbsp;G마켓&nbsp;&nbsp;</a>
+								<a class="button2" href="http://itempage3.auction.co.kr/DetailView.aspx?itemno=B727682633">옥션</a>
+								<br>
+							</th>
+						</tr>
+						<tr style="border-bottom:1.8px solid white">
+							<th>(종일권/after4)+국립과천과학관 입장권</th>
+							<th>28,900원/24,900원	</th>
+							<th><br>
+								<a class="button" href="http://www.tmon.co.kr/deal/2386302906?keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&tl_area=SALDEAL&tl_ord=5&searchClick=DL%7CND%7CBM&thr=ts">&nbsp;&nbsp;티몬&nbsp;&nbsp;</a>
+								<a class="button2" href="https://trip.coupang.com/tp/products/100000025137?q=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&itemsCount=36&searchId=72276ba8e0af427ebca4d270a56e9d16&rank=4">&nbsp;&nbsp;쿠팡&nbsp;&nbsp;</a>
+								<a class="button" href="http://www.wemakeprice.com/deal/adeal/4571223?search_keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&_no=3&_service=5">&nbsp;&nbsp;위메프&nbsp;&nbsp;</a>
+								<a class="button2" href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=2535216336&trTypeCd=21&trCtgrNo=585021&lCtgrNo=2878&mCtgrNo=1017900">&nbsp;&nbsp;11번가&nbsp;&nbsp;</a>
+								<a class="button" href="http://item.gmarket.co.kr/Item?goodscode=1663794604&pos_shop_cd=GE&pos_class_cd=300007053&pos_class_kind=S&selDateS=&selDateE=">&nbsp;&nbsp;G마켓&nbsp;&nbsp;</a>
+								<a class="button2" href="http://itempage3.auction.co.kr/DetailView.aspx?itemno=B729528669">&nbsp;&nbsp;옥션&nbsp;&nbsp;</a>
+								<br>
+							</th>
+						</tr>
+						<tr style="border-bottom:1.8px solid white">
+							<th>after4/after7</th>
+							<th>23,900원/15,000원	</th>
+							<th><br>
+								<a class="button" href="http://www.tmon.co.kr/deal/2385465030?keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&tl_area=SALDEAL&tl_ord=2&searchClick=DL%7CND%7CBM&thr=ts">&nbsp;&nbsp;티몬&nbsp;&nbsp;</a>
+								<a class="button2" href="https://trip.coupang.com/tp/products/100000038184?q=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&itemsCount=36&searchId=72276ba8e0af427ebca4d270a56e9d16&rank=0">&nbsp;&nbsp;쿠팡&nbsp;&nbsp;</a>
+								<a class="button" href="http://www.wemakeprice.com/deal/adeal/4569359?search_keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&_no=2&_service=5">&nbsp;&nbsp;위메프&nbsp;&nbsp;</a>
+								<a class="button2" href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=2537774052&trTypeCd=21&trCtgrNo=585021&lCtgrNo=2878&mCtgrNo=1017900">&nbsp;&nbsp;11번가&nbsp;&nbsp;</a>
+								<a class="button" href="http://item.gmarket.co.kr/Item?goodscode=1663668435&pos_shop_cd=GE&pos_class_cd=300007053&pos_class_kind=S&selDateS=&selDateE=">&nbsp;&nbsp;G마켓&nbsp;&nbsp;</a>
+								<a class="button2" href="http://itempage3.auction.co.kr/DetailView.aspx?itemno=B729461067">&nbsp;&nbsp;옥션&nbsp;&nbsp;</a>
+								<br>
+							</th>
+						</tr>
+						<tr style="border-bottom:1.8px solid white">
+							<th>라이언 치즈볼 어드벤처+after4</th>
+							<th>29,900원	</th>
+							<th><br>
+								<a class="button" href="http://www.tmon.co.kr/deal/2411695022?keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&tl_area=SALDEAL&tl_ord=8&searchClick=DL%7CND%7CBM&thr=ts">&nbsp;&nbsp;티몬&nbsp;&nbsp;</a>
+								<a class="button2" href="https://trip.coupang.com/tp/products/100000038887?q=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&itemsCount=36&searchId=72276ba8e0af427ebca4d270a56e9d16&rank=2">&nbsp;&nbsp;쿠팡&nbsp;&nbsp;</a>
+								<a class="button" href="http://www.wemakeprice.com/deal/adeal/4575252?search_keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&_no=8&_service=5">&nbsp;&nbsp;위메프&nbsp;&nbsp;</a>
+								<br>
+							</th>
+						</tr>
+						<tr>
+							<th>아쿠아넷 63종합권+종일권 패키지</th>
+							<th>43,400원	</th>
+							<th><br>
+								<a class="button" href="http://www.tmon.co.kr/deal/2389452930?keyword=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&tl_area=SALDEAL&tl_ord=9&searchClick=DL%7CND%7CBM&thr=ts">&nbsp;&nbsp;티몬&nbsp;&nbsp;</a>
+								<a class="button2" href="https://trip.coupang.com/tp/products/100000038297?q=%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C&itemsCount=36&searchId=72276ba8e0af427ebca4d270a56e9d16&rank=5">&nbsp;&nbsp;쿠팡&nbsp;&nbsp;</a>
+								<a class="button" href="http://www.wemakeprice.com/deal/adeal/4570843?search_keyword=서울랜드&_no=5&_service=5">&nbsp;&nbsp;위메프&nbsp;&nbsp;</a>
+								<br>
+							</th>
+						</tr>													
+					</tbody>					
+				</table>					
+			</div>
+			</div>
+					
+					
+				</header>
+				</div>
+				
+		
+		</div><!-- /container -->
+		<script>
+			function myFunction(){
+				document.getElementById("myDropdown").classList.toggle("show")
+			}
+			window.onclick=function(e){
+				if(!e.target.matches('.dropbtn')){
+					var myDropdown=document.getElementById("myDropdown");
+						if(myDropdown.classList.contains('show')){
+							myDropdown.classList.remove('show');
+						}
+				}
+			}
+		</script>
+		<script src="../static/js/classie.js"></script>
+		<script src="../static/js/boxesFx.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script>new BoxesFx( document.getElementById( 'boxgallery' ) );</script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
+</html>
+

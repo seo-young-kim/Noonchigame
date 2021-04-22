@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Preview_Castle</title>
+		<link rel="shortcut icon" href="/home/ec2-user/venv/project/FourBoxes/static/img/noon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/calendar.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="../static/js/modernizr.custom.js"></script>
+	</head>
+	<script>
+	var today, yy, mm, test;
+	</script>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="navbar">
+				<a href="/index">NOONCHIGAME</a>
+				<a href="/preview_castle">과거 관람객</a>
+				<a href="/predict_castle">이번주 관람객</a>
+				<a href="/map_castle">경복궁&주변</a>
+				<div class="dropdown">
+    				<button class="dropbtn" onclick="myFunction()">경복궁 행사 
+      					<i class="fa fa-caret-down"></i>
+    				</button>
+    				<div class="dropdown-content" id="myDropdown">
+				      <a href="/info_castle_1">수라간 시식 공감</a>
+				      <a href="/info_castle_2">주●야간 전통공연</a>
+				      <a href="/info_castle_3">수문장 교대의식</a>
+				      <a href="/notice_castle">공지사항</a>
+				    </div>
+				  </div>
+				
+			</div>
+			
+				<div class="panel"><img src="../static/img/castle.jpeg" alt="Image 1" style="opacity:0.1" width=100% height=171%/>
+				
+				<header class="codrops-header2">
+				
+			<div class="wrapper">
+			<h1 style="font:32px; color:#FFB2B9;">경복궁 과거 관람객</h1>
+    <div class="toolbar">
+      <!-- <div class="toggle">
+       <label onclick="prevMonth()"><h1><</h1></label>
+      </div>
+         <div id="m">
+</div> -->
+      <script>
+      var today = new Date();
+      var yy = today.getFullYear();
+      var mm = today.getMonth()+1;
+      yy = yy + "년";
+     // mm = mm + "월";
+    // document.getElementById("m").innerHTML = "<br/><font size=4>"+yy+"</font><br/><br/>";
+      
+     // document.getElementById("m").style.fontSize = '2em';
+      //document.getElementByClass("menu1").append(yy);
+     // document.getElementById("m").append(mm);
+      </script>
+    <div class="toggle">
+       <label onclick="prevMonth()"><h1><</h1></label>
+      </div>
+      <div id="y"></div>
+      <div class="dropdown">
+		    				<button class="dropbtn" onclick="myFunction1()">
+		    					<script>document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"</font><br/><br/>";</script>
+		      					<i class="fa fa-caret-down"></i>
+		    				</button>
+		    				<div class="dropdown-content" id="myDropdown1">
+						      <a><label onclick="findYear2011()">2011</label></a>
+						      <a><label onclick="findYear2012()">2012</label></a>
+						      <a><label onclick="findYear2013()">2013</label></a>
+						      <a><label onclick="findYear2014()">2014</label></a>
+						      <a><label onclick="findYear2015()">2015</label></a>
+						      <a><label onclick="findYear2016()">2016</label></a>
+						      <a><label onclick="findYear2017()">2017</label></a>
+						      <a><label onclick="findYear2018()">2018</label></a>
+						      <a><label onclick="findYear2019()">2019</label></a>
+						    </div>
+						 </div>
+					      <div id="m"></div>
+					  
+			    
+				<div class="dropdown">
+				    
+				    <button class="dropbtn" onclick="myFunction2()">
+    					<script>document.getElementById("m").style.fontSize = '4es';
+					      //document.getElementByClass("menu1").append(yy);
+					      document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+					    </script>
+      					<i class="fa fa-caret-down"></i>
+    				</button>
+    				<div class="dropdown-content" id="myDropdown2">
+				      <a><label onclick="findMonth1()">1</label></a>
+				      <a><label onclick="findMonth2()">2</label></a>
+				      <a><label onclick="findMonth3()">3</label></a>
+				      <a><label onclick="findMonth4()">4</label></a>
+				      <a><label onclick="findMonth5()">5</label></a>
+				      <a><label onclick="findMonth6()">6</label></a>
+				      <a><label onclick="findMonth7()">7</label></a>
+				      <a><label onclick="findMonth8()">8</label></a>
+				      <a><label onclick="findMonth9()">9</label></a>
+				      <a><label onclick="findMonth10()">10</label></a>
+				      <a><label onclick="findMonth11()">11</label></a>
+				      <a><label onclick="findMonth12()">12</label></a>
+				    </div>
+			    </div>
+      <div class="search-input">
+      <label onclick="nextMonth()"><h1>></h1></label>
+      
+      </div>
+    </div>
+    <div class="calendar">
+      <div class="calendar__header">
+        <div>mon</div>
+        <div>tue</div>
+        <div>wed</div>
+        <div>thu</div>
+        <div>fri</div>
+        <div>sat</div>
+        <div>sun</div>
+      </div>
+      <form method='post'>
+      <div class="calendar__week">
+        <div class="calendar__day day" id="1"></div>
+        <div class="calendar__day day" id="2"></div>
+        <div class="calendar__day day" id="3"></div>
+        <div class="calendar__day day" id="4"></div>
+        <div class="calendar__day day" id="5"></div>
+        <div class="calendar__day day" id="6"></div>
+        <div class="calendar__day day" id="7"></div>
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day" id="8"></div>
+        <div class="calendar__day day" id="9"></div>
+        <div class="calendar__day day" id="10"></div>
+        <div class="calendar__day day" id="11"></div>
+        <div class="calendar__day day" id="12"></div>
+        <div class="calendar__day day" id="13"></div>
+        <div class="calendar__day day" id="14"></div>        
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day" id="15"></div>
+        <div class="calendar__day day" id="16"></div>
+        <div class="calendar__day day" id="17"></div>
+        <div class="calendar__day day" id="18"></div>
+        <div class="calendar__day day" id="19"></div>
+        <div class="calendar__day day" id="20"></div>
+        <div class="calendar__day day" id="21"></div> 
+        </div>
+      <div class="calendar__week">
+        <div class="calendar__day day" id="22"></div>
+        <div class="calendar__day day" id="23"></div>
+        <div class="calendar__day day" id="24"></div>
+        <div class="calendar__day day" id="25"></div>
+        <div class="calendar__day day" id="26"></div> 
+        <div class="calendar__day day" id="27"></div> 
+        <div class="calendar__day day" id="28"></div> 
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day" id="29"></div>
+        <div class="calendar__day day" id="30"></div>
+        <div class="calendar__day day" id="31"></div>
+        <div class="calendar__day day" id="32"></div>
+        <div class="calendar__day day" id="33"></div>
+        <div class="calendar__day day" id="34"></div>
+        <div class="calendar__day day" id="35"></div>
+        </div>
+       
+        
+        <div class="calendar__week">
+        <div class="calendar__day day" id="36"></div>
+        <div class="calendar__day day" id="37"></div>
+        <div class="calendar__day day" id="38"></div>
+        <div class="calendar__day day" id="39"></div>
+        <div class="calendar__day day" id="40"></div>
+        <div class="calendar__day day" id="41"></div>
+        <div class="calendar__day day" id="42"></div>
+        </div>
+        
+        
+        </form>
+        <script>
+       
+        function monthdate(year, month){
+        	switch(month){
+        	case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        		return 31;
+        	case 4: case 6: case 9: case 11:
+        		return 30;
+        	case 2:
+        		if((year%400)==0||(year%4)==0&&(year%100)!=0) return 29;
+        		else return 28;
+        	}
+        }
+        
+        function update(dd, date, mo){ //dd는 요일 변수
+        	//document.write(mm, "..." , dd);
+        	for (i=dd;date<=mo;i++){
+            	switch(yy){
+            	case 2011:
+            		var test2011 = {{test2011}};
+            		if(test2011[mm-1][i-dd]==0) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = test2011[mm-1][i-dd]+"명dddd";
+			if(test2011[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2011[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;<br></font></font>";}
+			else if(test2011[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2011[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font size=6px><font color=#F15F5F>C&nbsp;&nbsp;&nbsp;&nbsp;<br></font></font>";}
+				else if(test2011[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2011[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font size=6px><font color=#FFA7A7>B&nbsp;&nbsp;&nbsp;&nbsp;<br></font></font>";}
+				else{ document.getElementById(i).innerHTML = "<br>"+test2011[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;<br></font></font>";}
+				break;
+            		}
+            		
+            	case 2012:
+            		var test2012 = {{test2012}};
+            		if(test2012[mm-1][i-dd]==0) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = "<br/><br/>"+test2012[mm-1][i-dd]+"명";
+                	
+				if(test2012[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2012[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2012[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2012[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2012[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2012[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+test2012[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+				break;
+            		}
+            		
+            	case 2013:
+            		var test2013 = {{test2013}};
+
+            		if(test2013[mm-1][i-dd]==0) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = "<br/><br/>"+test2013[mm-1][i-dd]+"명";
+                		
+				if(test2013[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2013[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2013[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2013[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2013[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2013[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+test2013[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+				break;
+            		}
+            		
+            	case 2014:
+            		var test2014 = {{test2014}};
+
+            		if(test2014[mm-1][i-dd]==0) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = "<br/><br/>"+test2014[mm-1][i-dd]+"명";
+                	
+				if(test2014[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2014[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2014[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2014[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2014[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2014[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+test2014[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+				break;
+            		}
+            		
+            	case 2015:
+            		var test2015 = {{test2015}};
+            		if(test2015[mm-1][i-dd]==0) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = "<br/><br/>"+test2015[mm-1][i-dd]+"명";
+                		
+				if(test2015[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2015[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2015[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2015[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2015[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2015[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+test2015[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+				break;
+            		}
+            		
+            	case 2016:
+            	//	var test2016 = {{test2016}};
+            		var test2016 = [[23233, 24339, 11950, 7842, 0, 9369, 8384, 7199, 12812, 13401, 8136, 0, 8920, 8791, 8616, 14578, 12960, 8332, 0, 12477, 9970, 10100, 12544, 11306, 11217, 0, 19022, 14117, 13720, 19657, 14851], [12162, 0, 12054, 8722, 6590, 10258, 15147, 35035, 21863, 21521, 12991, 11162, 15905, 13275, 12645, 0, 16480, 15151, 12979, 16300, 15198, 10136, 0, 12402, 11119, 10874, 16098, 12521, 8673, 0, 0], [8447, 7004, 7009, 10689, 6580, 16183, 9683, 0, 10695, 8985, 10539, 16774, 14123, 11296, 0, 14348, 11821, 12499, 26664, 21957, 13609, 0, 16643, 15414, 14882, 26183, 22144, 15993, 0, 21531, 18502], [17400, 28929, 18691, 18301, 0, 19956, 17867, 19022, 27742, 23486, 18846, 0, 27439, 87684, 19436, 23523, 25349, 19778, 0, 28764, 23080, 21253, 26373, 21519, 20319, 0, 30415, 25120, 23518, 28935, 0], [26423, 17601, 2888, 22849, 81148, 16462, 77854, 28049, 14016, 0, 26043, 21679, 26643, 27528, 14180, 19532, 0, 25251, 20162, 19705, 24929, 19426, 15883, 0, 26723, 20264, 21511, 26690, 20502, 18012, 0], [17309, 15067, 13312, 24682, 25810, 20763, 0, 17103, 17827, 16919, 19639, 18075, 13640, 0, 17343, 16696, 15315, 21211, 17886, 14519, 0, 82750, 16568, 14682, 23589, 19001, 18270, 0, 24484, 17076, 0], [12189, 22910, 19975, 13343, 0, 19998, 18395, 17396, 21864, 19706, 17342, 0, 20643, 18977, 22259, 20386, 27333, 24979, 0, 24150, 21206, 21312, 23980, 22783, 21045, 0, 27738, 21433, 19865, 26109, 26266], [25947, 0, 24759, 19602, 21124, 27201, 19401, 21359, 0, 22882, 19882, 20237, 22825, 24728, 21807, 0, 21519, 19435, 18295, 19053, 17140, 14935, 0, 17776, 14727, 13933, 21628, 17386, 12420, 0, 8449], [12192, 12415, 19675, 15857, 11226, 0, 14639, 14697, 13877, 19199, 15547, 10344, 0, 22787, 91347, 36603, 26252, 16824, 12817, 0, 21170, 18048, 16856, 33791, 23819, 21075, 0, 28014, 21782, 21424, 0], [39095, 23476, 38779, 0, 28356, 25102, 21090, 30072, 27983, 22797, 0, 28147, 26137, 29899, 34296, 21742, 20726, 0, 28771, 28111, 34842, 42729, 23819, 22324, 0, 32101, 28283, 27352, 27180, 24723, 11851], [0, 14523, 14303, 14590, 22668, 20235, 13053, 0, 14133, 12419, 15688, 11715, 19163, 10432, 0, 15954, 13510, 12837, 11142, 18961, 11604, 0, 12483, 9009, 10975, 4978, 13274, 10487, 0, 14928, 0], [9433, 10311, 6172, 12498, 12535, 0, 9267, 10813, 10264, 5652, 13698, 10509, 0, 12085, 9593, 10193, 8277, 13664, 10733, 0, 10720, 7303, 11018, 10359, 15251, 12055, 0, 15270, 10097, 12490, 13167]];
+
+            		if(test2016[mm-1][i-dd]==0) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = "<br/><br/>"+test2016[mm-1][i-dd]+"명";
+                		
+				if(test2016[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2016[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2016[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2016[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2016[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2016[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+test2016[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+				break;
+            		}
+            		
+            	case 2017:
+            		var test2017 = {{test2017}};
+            		if(test2017[mm-1][i-dd]==0) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = "<br/><br/>"+test2017[mm-1][i-dd]+"명";
+                		
+				if(test2017[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2017[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2017[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2017[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2017[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2017[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+test2017[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+				break;
+            		}
+            		
+            	case 2018:
+            		var test2018 = {{test2018}};
+            		if(test2018[mm-1][i-dd]<1000) {
+            			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+            			break;
+            		}
+            		else {
+            			//document.getElementById(i).innerHTML = "<br/><br/>"+test2018[mm-1][i-dd]+"명";
+                		
+				if(test2018[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+test2018[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2018[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+test2018[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2018[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+test2018[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+test2018[mm-1][i-dd]+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+				break;
+            		}
+            		
+            	case 2019:
+            		var test2019 = {{test2019}};
+            		if(mm>today2.getMonth()+1) {
+            			document.getElementById(i).innerHTML = "<br/><br/>";
+            			break;
+            		}
+            		
+            		else if(mm==today2.getMonth()+1){
+            			
+            			//document.getElementById("mm: ",mm);
+            			if(date>=today2.getDate()){
+            				document.getElementById(i).innerHTML = "<br/><br/>";
+                			break;
+            			} 
+            			else {
+            				if(test2019[mm-1][i-dd]==0) {
+                    			document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+                    			break;
+                    		}
+                    		else {
+                    			//document.getElementById(i).innerHTML = "<br/><br/>"+Math.round(test2019[mm-1][i-dd])+"명";
+                        		
+					if(test2019[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2019[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else if(test2019[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+else{ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+					break;
+                    		}
+                    		
+            			} 
+            			//document.write(date, "...", today2.getDate());
+            		} 
+            		else {
+            			if(test2019[mm-1][i-dd]==0) {
+            				document.getElementById(i).innerHTML = "<br/><br/><font color=#E4B2B9>경복궁 휴무</font>";
+                			break;
+                		}
+                		else {
+                		//	document.getElementById(i).innerHTML = "<br/><br/>"+Math.round(test2019[mm-1][i-dd])+"명";
+					if(test2019[mm-1][i-dd] >25000){ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FF0000><font size=6px>D&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+					else if(test2019[mm-1][i-dd] >15000){ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#F15F5F><font size=6px>C&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+					else if(test2019[mm-1][i-dd] >8000){ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFA7A7><font size=6px>B&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+					else{ document.getElementById(i).innerHTML = "<br>"+Math.round(test2019[mm-1][i-dd])+"명&nbsp;&nbsp;&nbsp;&nbsp;<br>"+"<font color=#FFD8D8><font size=6px>A&nbsp;&nbsp;&nbsp;&nbsp;</font></font>";}
+                                        break;
+                		}
+            		}
+            		
+            		
+            		
+            	default:
+            		document.getElementById(i).innerHTML = "<br/><br/>";
+            	}
+            	
+            	
+            	document.getElementById(i).prepend(date);
+            	
+            	//document.getElementById(i).innerHTML = {{test}}
+            	date++;
+            }
+        }
+        
+        today2 = new Date();
+        yy = today2.getFullYear();
+      	mm = today2.getMonth() + 1;
+   
+    
+        var mo = monthdate(yy, mm);
+        today = new Date(yy, mm-1);
+        var dd = today.getDay();
+     
+        	if (dd==0) dd=7;
+            var date = 1;
+            
+           
+            for (i=1;i<dd;i++){
+            	document.getElementById(i).innerHTML = "";
+            }
+            update(dd, date, mo);	
+ 
+   
+        function nextMonth(){
+        	mm++;
+        	if(mm>12){
+        		mm=mm-12;
+        		yy++;
+        	}
+        	/* document.getElementById("m").innerHTML = "<br/><font size=4>"+yy+"년</font><br/><br/>";
+            document.getElementById("m").style.fontSize = '2em'; */
+            document.getElementById("y").innerHTML = "<font size=5>"+yy+"년</font>";
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+        	today = new Date(yy, mm-1);
+        	var mo = monthdate(yy, mm);
+        var dd = today.getDay();
+	
+        
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        update(dd, date, mo);
+       
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        
+        function prevMonth(){
+        	mm--;
+        	if(mm<1){
+        		mm=mm+12;
+        		yy--;
+        	}
+        	/* document.getElementById("m").innerHTML = "<br/><font size=4>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").style.fontSize = '2em'; */
+            document.getElementById("y").innerHTML = "<font size=5>"+yy+"년</font>";
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+      //find month directly
+        function findMonth1(){
+        	mm=1;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth2(){
+        	mm=2;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth3(){
+        	mm=3;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth4(){
+        	mm=4;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth5(){
+        	mm=5;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth6(){
+        	mm=6;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth7(){
+        	mm=7;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth8(){
+        	mm=8;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth9(){
+        	mm=9;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth10(){
+        	mm=10;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth11(){
+        	mm=11;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findMonth12(){
+        	mm=12;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        //////////////////////////find year directly
+        function findYear2011(){
+        	yy=2011;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+        
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2012(){
+        	yy=2012;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2013(){
+        	yy=2013;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2014(){
+        	yy=2014;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2015(){
+        	yy=2015;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2016(){
+        	yy=2016;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2017(){
+        	yy=2017;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2018(){
+        	yy=2018;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        function findYear2019(){
+        	yy=2019;
+        	document.getElementById("y").innerHTML = "<br/><font size=5>"+yy+"년</font><br/><br/>";
+     
+            document.getElementById("m").innerHTML = "<font size=5>"+mm+"월</font>";
+            
+            var mo = monthdate(yy, mm);
+        	today = new Date(yy, mm-1);
+        var dd = today.getDay();
+       // var today2 = new Date();
+    	if (dd==0) dd=7;
+        var date = 1;
+        for (i=1;i<dd;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        
+        update(dd, date, mo);
+        for (;i<=42;i++){
+        	document.getElementById(i).innerHTML = "";
+        }
+        }
+        </script>
+	<p><br><br><font color=#FFD8D8><font size=4px>A : 여유(0명~8000명)</font></font>
+	<font color=#FFA7A7><font size=4px>B : 보통(8001명~15000명)</font></font>
+	<font color=#F15F5F><font size=4px>C : 혼잡(15001명~25000명)</font></font>
+	<font color=#FF0000><font size=4px>D : 매우혼잡(25001명~)</font></font><br><br><br><br></p>
+	
+    </div>				 
+</div>
+</header>
+</div>
+
+
+</div><!-- /container -->
+		<script src="../static/js/classie.js"></script>
+		<script src="../static/js/calendar.js"></script>
+
+		
+		<script>
+			new BoxesFx( document.getElementById( 'boxgallery' ) );
+		</script>
+		<script>
+			function myFunction(){
+				document.getElementById("myDropdown").classList.toggle("show")
+			}
+			window.onclick=function(e){
+				if(!e.target.matches('.dropbtn')){
+					var myDropdown=document.getElementById("myDropdown");
+						if(myDropdown.classList.contains('show')){
+							myDropdown.classList.remove('show');
+						}
+				}
+			}
+		</script>
+		
+		
+	</body>
+</html>

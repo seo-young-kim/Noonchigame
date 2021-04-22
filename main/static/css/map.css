@@ -1,0 +1,95 @@
+rset "EUC-KR";
+.center{
+   position: absolute;
+   top: 150%;
+   left: 50%;
+
+   max-width: 1000px;
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+
+
+.left{
+   position: absolute;
+   top: 100px;
+   left : 50%;
+   top-margin:1000px;
+   max-width: 1000px;
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+
+.left_1{
+   position: absolute;
+   top: 100px;
+   left : 50%;
+   top-margin:1000px;
+   max-width: 1000px;
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+
+.left_2{
+   position: absolute;
+   top: 400px;
+   left : 50%;
+   top-margin:1000px;
+   max-width: 1000px;
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+
+.left_3{
+   position: absolute;
+   top: 60px;
+   left : 50%;
+   top-margin:1000px;
+   max-width: 1000px;
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+
+.left_4{
+   position: absolute;
+   top: 39%;
+   left : 50%;
+   top-margin:1000px;
+   max-width: 1000px;
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+
+h1{
+	top-margin:500px;
+	text-align : center;
+}
+.map{
+   width : 600px;
+   height : 500px;
+   color : black;
+}
+
+.aa{
+   color : black;
+}
+
+.Board_01 tbl_notice{
+	text-align : center;
+}
+
+td.m_dateSize{
+	text-align:center;
+}

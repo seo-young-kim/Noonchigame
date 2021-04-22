@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Predict_Castle</title>
+		<link rel="shortcut icon" href="/home/ec2-user/venv/project/FourBoxes/static/img/noon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="../static/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/calendar.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/map.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/predict.css" />
+		<script src="../static/js/modernizr.custom.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawVisualization);
+	
+		function drawVisualization() { 
+			
+			
+			var data = google.visualization.arrayToDataTable([
+					['day', 'people expected'],
+					['{{data.month[0]}}/{{data.day[0]}}',  {{data.predict[0]}}],
+					['{{data.month[1]}}/{{data.day[1]}}',  {{data.predict[1]}}],
+					['{{data.month[2]}}/{{data.day[2]}}',  {{data.predict[2]}}],
+					['{{data.month[3]}}/{{data.day[3]}}',  {{data.predict[3]}}],
+					['{{data.month[4]}}/{{data.day[4]}}',  {{data.predict[4]}}],
+					['{{data.month[5]}}/{{data.day[5]}}',  {{data.predict[5]}}],
+					['{{data.month[6]}}/{{data.day[6]}}',  {{data.predict[6]}}],
+					['{{data.month[7]}}/{{data.day[7]}}',  {{data.predict[7]}}],
+					['{{data.month[8]}}/{{data.day[8]}}',  {{data.predict[8]}}],
+					['{{data.month[9]}}/{{data.day[9]}}',  {{data.predict[9]}}]
+				]);
+			var options = {
+
+
+					
+					hAxis: {title: 'day'},
+					
+					vAxis: {title: 'visitor',
+						gridlines:{
+							color : 'transparent'
+						}},
+				
+					legend:'none',
+					colors: [{color: '#4682B4'}],
+					backgroundColor:{fill:'transparent'},
+					areaOpacity:0.8,
+					pointSize:10,
+					
+				};
+			
+			
+			var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+	</script>
+
+
+	</head>
+
+	<style type = "text/css">
+    td{border-spacing: 0px; border-style: none; padding: 0px; width:200px;}
+	table{
+		width: 100%;
+		height:100%
+	}
+    </style>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="navbar">
+				<a href="/index">NOONCHIGAME</a>
+				<a href="/preview_castle">과거 관람객</a>
+				<a href="/predict_castle">이번주 관람객</a>
+				<a href="/map_castle">경복궁&주변</a>
+				<div class="dropdown">
+    				<button class="dropbtn" onclick="myFunction()">경복궁 행사 
+      					<i class="fa fa-caret-down"></i>
+    				</button>
+    				<div class="dropdown-content" id="myDropdown">
+				      <a href="/info_castle_1">수라간 시식 공감</a>
+				      <a href="/info_castle_2">주●야간 전통공연</a>
+				      <a href="/info_castle_3">수문장 교대의식</a>
+				      <a href="/notice_castle">공지사항</a>
+				    </div>
+				  </div>
+				
+				</div>
+			
+				<div class="panel"><img src="../static/img/castle.jpeg" alt="Image 1" style="opacity:0.1" width=100% height=250%/>
+				<header  class = "left"  style="top:700px" align="center">
+			<div align="center" style="width:100%; text_align:center">
+				<br>
+ 			<h1 style="font:32px;"> 경복궁 이번주 관람객 </h1>
+				<br>
+ 	<div style = "overflow-x:scroll; overflow-y:hidden;  margin:auto; width:100%; height:500px"><!--여기에용 글씨찾는데 시간 버리지 마시라구 확대해놨습니당  -->
+    <table>
+      <tr>
+      {% for i in range(10) %}
+        <td class = "entry{{i+1}}" id="a">
+        <div class="wrap">
+        		<div style="lin-height:200%; font-size : x-large;color:black; text-align:center"> 
+      				<br>
+      				{%if (data.week[i] == 'SUN') %}
+        			<strong style="font-size : 30px; color:red">
+      
+        			{{data.week[i]}}</strong>
+        			{% elif (data.week[i] == 'SAT')%}
+      				<strong style="font-size : 30px; color:blue;">
+      
+        			{{data.week[i]}}</strong>
+        			{% else %}
+      				<strong style="font-size : 30px;">
+      
+        			{{data.week[i]}}</strong>
+      
+        			{% endif %}			
+      	  			<br>
+      	  			{%if (data.holiday[i]!=0)%}
+      	  			
+      	  			{{data.month[i]}}/<span style="color:red;">{{data.day[i]}}</span>
+      	  			
+      	  			{%else%}
+      	  			
+        			{{data.month[i]}}/{{data.day[i]}}
+      	  			
+      	  			{% endif %} 
+      	  			<br>
+      	  			<br>
+      	  			 </div>
+			    <div style="width::200%; height:20%; text-align:center;"><!--여기아님-->
+			    
+        		<img src="../static/img/weather/{{data.weather_img[i]}}" style="width:60%;height:auto;"></div><!--아님-->
+        
+        	
+        	<div style="height:30%; width:100%; font-size:medium; text-align:center;">
+        		<p style="color:black; font-weight:bold;">
+        		
+        		최고 기온 <span style="color:#ac2715">{{data.tem_min[i]}}&#186;C</span>
+        		<br>
+        		최저 기온 <span style="color:#2c2c90">{{data.tem_max[i]}}&#186;C</span>
+        		<br>
+        		<br>
+        		강수확률
+        		<br>
+        		오전 {{data.rain_noon[i]}} % / 오후 {{data.rain_even[i]}} %
+        		</p>
+        	</div >
+        	<div style="height:30%; width:100%;text-align:center;">
+        		
+        		{%if (data.week[i] == 'TUE') %}
+        		<span style="color:black; font-weight:bold; font-size : 25px;"> 
+        		경복궁
+        		<br>
+        		정기 휴무
+        		</span>
+        		
+        		{% else %}
+
+			 <span style="color:black; font-weight:bold; font-size : 25px;">
+                           {{data.predict[i]}}명
+			<br>
+                         </span>
+
+
+				{%if (data.predict[i] >= 40001) %}
+
+        			<span style="color:black; font-weight:bold; font-size : 25px;"> 				매우혼잡
+        			</span>
+
+				{%elif (40000>=data.predict[i] >= 25001) %}
+			<span style="color:black; font-weight:bold; font-size : 25px;">
+                                혼잡
+                                </span>
+				{% elif (25000>=data.predict[i] >= 10001)  %}
+				<span style="color:black; font-weight:bold; font-size : 25px;">
+                                보통
+                                </span>
+
+				{% else %}
+                        	<span style="color:black; font-weight:bold; font-size : 25px;">
+                                여유
+                                </span>
+
+
+				{% endif %}
+
+        		
+        		{% endif %}
+        	</div>
+        </div>
+        </td>
+         {% endfor %} 
+      </tr>
+    </table>
+    </div>
+
+
+    <div style="width:900px; height:100px; ">
+<p>여유: 0명~10000명  보통: 10001명~25000명 혼잡: 25001명~40000명  매우혼잡: 40001명~
+<br>
+<br>
+		</div>    
+     <h1> 경복궁 관람객 수 분포 </h1>
+                                <br>
+
+<div class="graph" id="chart_div" style="width:100%; height:600px;top:900px;  margin:auto;"><!--그래프크기-->
+		</div>    
+    <div style="width:900px; height:10%;">
+		</div>    
+			</div>
+			</header>
+				</div>
+		</div><!-- /container -->
+	
+		<script src="../static/js/classie.js"></script>
+		<script src="../static/js/calendar.js"></script>
+
+		
+		<script>
+			new BoxesFx( document.getElementById( 'boxgallery' ) );
+		</script>
+		
+		
+	</body>
+</html>

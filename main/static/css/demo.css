@@ -1,0 +1,256 @@
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	background: #333;
+	color: #fff;
+	font-weight: 200;
+	font-size: 1em;
+	font-family: 'Raleway', 'Arial', sans-serif;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+	font-weight: 600;
+}
+
+a:hover, a:focus {
+	color: #debcc3;
+}
+
+section {
+	padding: 1em;
+	text-align: center;
+}
+
+/* Header */
+.codrops-header {
+	z-index: 1000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	max-width: 500px;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.codrops-header2 {
+
+	position: absolute;
+	top: 60%;
+	left: 34%;
+
+	text-align: center;
+	max-width: 500px;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.codrops-header h1 {
+	margin: 0;
+	font-weight: 200;
+	font-size: 3em;
+	line-height: 1;
+}
+
+.codrops-header h1 span {
+	display: block;
+	padding: 0.5em 0 0.6em 0.1em;
+	font-size: 40%;
+	line-height: 1.2;
+	opacity: 0.7;
+}
+
+/* To Navigation Style */
+.codrops-top {
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.69em;
+	line-height: 2.2;
+	position: relative;
+	z-index: 2000;
+}
+
+.codrops-top a {
+	display: inline-block;
+	padding: 0.3em 0.7em;
+	text-decoration: none;
+	letter-spacing: 1px;
+	margin: 5px;
+}
+
+.codrops-top span.right {
+	float: right;
+}
+
+.codrops-top span.right a {
+	display: block;
+	float: left;
+}
+
+.codrops-icon:before {
+	margin: 0 4px;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'codropsicons';
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+
+/* Demo Buttons Style */
+.codrops-demos {
+	padding-top: 2em;
+	font-size: 0.8em;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 0.5em;
+	padding: 0.7em 1.1em;
+	outline: none;
+	border: 2px solid #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	width: 165px;
+}
+
+.codrops-demos a:hover,
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover {
+	color: #debcc3;
+	border-color: #debcc3;
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}
+/* Navbar container */
+.navbar{
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Links inside the navbar */
+.navbar a{
+	float: left;
+	font-size: 16px;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight:bold; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: black;
+  font-family:inherit;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: gray;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: gray;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-family:inherit;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  font-family:inherit;
+}
+
+.show{
+	display: block;
+}
+
+/* seooung*/
+.codrops-header3 {
+
+   position: absolute;
+   top: 55%;
+   left: 50%;
+   text-align: center;
+   top-margin:1000px;
+   max-width: 700px;
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}

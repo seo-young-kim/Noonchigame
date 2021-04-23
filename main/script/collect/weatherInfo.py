@@ -11,7 +11,7 @@ temp, rain, cloud,wind
 
 
 """
-
+PATH = '/app/main/script/driver/chromedriver'
 def path(src):
     img_path={'https://www.weatheri.co.kr/images/icon_2013_01/01.png':1,
             'https://www.weatheri.co.kr/images/icon_2013_01/02.png':2,
@@ -30,7 +30,7 @@ def crawling():
     options.headless = True
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome('./chromedriver',options=options)
+    driver = webdriver.Chrome(PATH,options=options)
     driver.get("http://www.weatheri.co.kr/forecast/forecast01.php?rid=0101010000&k=1&a_name=%EC%84%9C%EC%9A%B8")
     driver.implicitly_wait(5)
 
@@ -61,7 +61,7 @@ def naver():
     options.headless = True
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome('./chromedriver',options=options)    
+    driver = webdriver.Chrome(PATH,options=options)    
     url="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EC%84%9C%EC%9A%B8+%EC%A4%91%EA%B5%AC+%EB%82%A0%EC%94%A8+%EC%98%88%EB%B3%B4&oquery=%EC%84%9C%EC%9A%B8+%EA%B2%BD%EB%B3%B5%EA%B6%81+%EB%82%A0%EC%94%A8+%EC%98%88%EB%B3%B4&tqi=UTZOLdprvmZssm86d30ssssssLl-490215"
     driver.get(url)
     driver.implicitly_wait(5) 

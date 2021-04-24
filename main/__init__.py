@@ -1,7 +1,7 @@
 from flask import Flask,request,render_template
 import sys
 sys.path.append('/app/main')
-
+from script.predict import castleInfo
 from script.logger import logger
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def home_seoul():
     return render_template('index4.html')
 
 try:
-    value=predict()
+    value=castleInfo()
 except :
     value ={}
     logger.error("fail call fct : predict()")
@@ -26,7 +26,8 @@ except :
 def castle_predict():
     try:
         return render_template('predict_castle.html',data=value)
-    except :
+    except Exception:
+        logger.error(Exception)
         return 'predict_castle.html'
 
 @app.route('/select.html')

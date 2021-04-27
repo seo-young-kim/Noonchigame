@@ -25,16 +25,16 @@
 			
 			var data = google.visualization.arrayToDataTable([
 					['day', 'people expected'],
-					['{{data.month[0]}}/{{data.day[0]}}',  {{data.predict[0]}}],
-					['{{data.month[1]}}/{{data.day[1]}}',  {{data.predict[1]}}],
-					['{{data.month[2]}}/{{data.day[2]}}',  {{data.predict[2]}}],
-					['{{data.month[3]}}/{{data.day[3]}}',  {{data.predict[3]}}],
-					['{{data.month[4]}}/{{data.day[4]}}',  {{data.predict[4]}}],
-					['{{data.month[5]}}/{{data.day[5]}}',  {{data.predict[5]}}],
-					['{{data.month[6]}}/{{data.day[6]}}',  {{data.predict[6]}}],
-					['{{data.month[7]}}/{{data.day[7]}}',  {{data.predict[7]}}],
-					['{{data.month[8]}}/{{data.day[8]}}',  {{data.predict[8]}}],
-					['{{data.month[9]}}/{{data.day[9]}}',  {{data.predict[9]}}]
+					['{{data.month[0]}}/{{data.day[0]}}',  {{data.result[0]}}],
+					['{{data.month[1]}}/{{data.day[1]}}',  {{data.result[1]}}],
+					['{{data.month[2]}}/{{data.day[2]}}',  {{data.result[2]}}],
+					['{{data.month[3]}}/{{data.day[3]}}',  {{data.result[3]}}],
+					['{{data.month[4]}}/{{data.day[4]}}',  {{data.result[4]}}],
+					['{{data.month[5]}}/{{data.day[5]}}',  {{data.result[5]}}],
+					['{{data.month[6]}}/{{data.day[6]}}',  {{data.result[6]}}],
+					['{{data.month[7]}}/{{data.day[7]}}',  {{data.result[7]}}],
+					['{{data.month[8]}}/{{data.day[8]}}',  {{data.result[8]}}],
+					['{{data.month[9]}}/{{data.day[9]}}',  {{data.result[9]}}]
 				]);
 			var options = {
 
@@ -107,18 +107,18 @@
         <div class="wrap">
         		<div style="lin-height:200%; font-size : x-large;color:black; text-align:center"> 
       				<br>
-      				{%if (data.week[i] == 'SUN') %}
+      				{%if (data.weekday[i] == 'SUN') %}
         			<strong style="font-size : 30px; color:red">
       
-        			{{data.week[i]}}</strong>
-        			{% elif (data.week[i] == 'SAT')%}
+        			{{data.weekday[i]}}</strong>
+        			{% elif (data.weekday[i] == 'SAT')%}
       				<strong style="font-size : 30px; color:blue;">
       
-        			{{data.week[i]}}</strong>
+        			{{data.weekday[i]}}</strong>
         			{% else %}
       				<strong style="font-size : 30px;">
       
-        			{{data.week[i]}}</strong>
+        			{{data.weekday[i]}}</strong>
       
         			{% endif %}			
       	  			<br>
@@ -136,25 +136,25 @@
       	  			 </div>
 			    <div style="width::200%; height:20%; text-align:center;"><!--여기아님-->
 			    
-        		<img src="../static/img/weather/{{data.weather_img[i]}}" style="width:60%;height:auto;"></div><!--아님-->
+        		<img src="../static/img/weather{{data.weather_img[i]}}" style="width:60%;height:auto;"></div><!--아님-->
         
         	
         	<div style="height:30%; width:100%; font-size:medium; text-align:center;">
         		<p style="color:black; font-weight:bold;">
         		
-        		최고 기온 <span style="color:#ac2715">{{data.tem_min[i]}}&#186;C</span>
+        		최고 기온 <span style="color:#ac2715">{{data.min_temp[i]}}&#186;C</span>
         		<br>
-        		최저 기온 <span style="color:#2c2c90">{{data.tem_max[i]}}&#186;C</span>
+        		최저 기온 <span style="color:#2c2c90">{{data.max_temp[i]}}&#186;C</span>
         		<br>
         		<br>
         		강수확률
         		<br>
-        		오전 {{data.rain_noon[i]}} % / 오후 {{data.rain_even[i]}} %
+        		오전 {{data.rain_morning[i]}} % / 오후 {{data.rain_afternoon[i]}} %
         		</p>
         	</div >
         	<div style="height:30%; width:100%;text-align:center;">
         		
-        		{%if (data.week[i] == 'TUE') %}
+        		{%if (data.weekday[i] == 'TUE') %}
         		<span style="color:black; font-weight:bold; font-size : 25px;"> 
         		경복궁
         		<br>
@@ -164,21 +164,21 @@
         		{% else %}
 
 			 <span style="color:black; font-weight:bold; font-size : 25px;">
-                           {{data.predict[i]}}명
+                           {{data.result[i]}}명
 			<br>
                          </span>
 
 
-				{%if (data.predict[i] >= 40001) %}
+				{%if (data.result[i] >= 40001) %}
 
         			<span style="color:black; font-weight:bold; font-size : 25px;"> 				매우혼잡
         			</span>
 
-				{%elif (40000>=data.predict[i] >= 25001) %}
+				{%elif (40000>=data.result[i] >= 25001) %}
 			<span style="color:black; font-weight:bold; font-size : 25px;">
                                 혼잡
                                 </span>
-				{% elif (25000>=data.predict[i] >= 10001)  %}
+				{% elif (25000>=data.result[i] >= 10001)  %}
 				<span style="color:black; font-weight:bold; font-size : 25px;">
                                 보통
                                 </span>

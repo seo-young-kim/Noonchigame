@@ -18,6 +18,10 @@ def home_seoul():
 
 try:
     value=castleInfo()
+    
+    #value = {'day':[0,0,0,0,0,0,0,0,0,0],
+     #       'holiday':[0,0,0,0,0,0,0,0,0,0],
+      #      'rain_morning':[0,0,0,0,0,0,0,0,0,0]}
 except :
     value ={}
     logger.error("fail call fct : predict()")
@@ -28,7 +32,7 @@ def castle_predict():
         return render_template('predict_castle.html',data=value)
     except Exception:
         logger.error(Exception)
-        return 'predict_castle.html'
+        return value
 
 @app.route('/select.html')
 def select():

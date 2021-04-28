@@ -1,7 +1,7 @@
 from flask import Flask,request,render_template
 import sys
 sys.path.append('/app/main')
-from script.predict import castleInfo
+from script.get_data import castleInfo
 from script.logger import logger
 
 app = Flask(__name__)
@@ -18,13 +18,8 @@ def home_seoul():
 
 try:
     value=castleInfo()
-    
-    #value = {'day':[0,0,0,0,0,0,0,0,0,0],
-     #       'holiday':[0,0,0,0,0,0,0,0,0,0],
-      #      'rain_morning':[0,0,0,0,0,0,0,0,0,0]}
 except :
-    value ={}
-    logger.error("fail call fct : predict()")
+    logger.error("Failed to get data : castleInfo()")
 # 서영
 @app.route('/predict_castle')
 def castle_predict():
@@ -33,6 +28,7 @@ def castle_predict():
     except Exception:
         logger.error(Exception)
         return value
+
 
 @app.route('/select.html')
 def select():

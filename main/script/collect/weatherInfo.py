@@ -8,9 +8,8 @@ from selenium.webdriver.chrome.options import Options
 """
 collect weather data for 10 days from today
 temp, rain, cloud,wind 
-
-
 """
+
 PATH = '/app/main/script/driver/chromedriver'
 def path(src):
     img_path={'https://www.weatheri.co.kr/images/icon_2013_01/01.png':1,
@@ -36,6 +35,7 @@ def crawling():
 
     dic = {'day':[],'rain':[],'max_temp':[],'min_temp':[],'wind':[],'cloud':[],'img':[]}
     for k in [2,8]:
+	
         for i in range(1,6):
             day=driver.find_element_by_xpath("/html/body/table[2]/tbody/tr[3]/td[2]/table/tbody/tr[3]/td/table/tbody/tr[3]/td/table["+str(k)+"]/tbody/tr[1]/td["+str(i)+"]/b")
             rain=driver.find_element_by_xpath("/html/body/table[2]/tbody/tr[3]/td[2]/table/tbody/tr[3]/td/table/tbody/tr[3]/td/table["+str(k)+"]/tbody/tr[2]/td["+str(i)+"]/table/tbody/tr[4]/td[2]/font")
@@ -51,10 +51,13 @@ def crawling():
             dic['img'].append(cloud.get_attribute('src')[46:])
             dic['max_temp'].append(temp_max.text[0:len(temp_max.text)-2])
             dic['min_temp'].append(temp_min.text[0:len(temp_min.text)-2])
-            dic['wind'].append(float(wind.text[0]))
-    
+            dic['wind'].append(float(wind.text[0])) 
+#            print(dic)
     driver.close(); 
     return dic
+
+#print(crawling())
+
 
 def naver():
     options = Options()

@@ -10,7 +10,7 @@ logger.setLevel(logging.DEBUG)
 
 
 from logging.handlers import TimedRotatingFileHandler
-fileHandler = TimedRotatingFileHandler(filename=log_dir+'/py_sched.log', when='midnight', interval=1, encoding='utf-8')
+fileHandler = TimedRotatingFileHandler(filename=log_dir+'/error.log', when='midnight', interval=1, encoding='utf-8')
 fileHandler.setFormatter(formatter)
 fileHandler.suffix = '%Y%m%d'
 fileHandler.setLevel(logging.ERROR)

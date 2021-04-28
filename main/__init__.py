@@ -6,15 +6,9 @@ from script.logger import logger
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
-
-@app.route('/index4')
-def home_seoul():
-    return render_template('index4.html')
 
 try:
     value=castleInfo()

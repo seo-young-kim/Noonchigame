@@ -1,0 +1,13 @@
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too
+ERROR:root:And non-ASCII stuff, too, like Øresund and Malmö
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too
+ERROR:root:And non-ASCII stuff, too, like Øresund and Malmö
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too
+ERROR:root:And non-ASCII stuff, too, like Øresund and Malmö
+ERROR:root:(<class 'NameError'>, NameError("name 'prdict' is not defined"), <traceback object at 0x7f40c9469900>)
